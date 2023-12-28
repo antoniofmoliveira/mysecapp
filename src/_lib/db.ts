@@ -7,17 +7,17 @@ export { sql };
 const db = createConnectionPool(process.env.DATABASE_URL);
 export default db;
 
-export async function getUser(email: string) {
-    noStore();
+// export async function getUser(email: string) {
+//     noStore();
 
-    try {
-        const user = await db.query(sql`SELECT * FROM users WHERE email=${email}`);
-        return user[0] as User;
-    } catch (error) {
-        console.error('Failed to fetch user:', error);
-        throw new Error('Failed to fetch user.');
-    }
-}
+//     try {
+//         const user = await db.query(sql`SELECT * FROM users WHERE email=${email}`);
+//         return user[0] as User;
+//     } catch (error) {
+//         console.error('Failed to fetch user:', error);
+//         throw new Error('Failed to fetch user.');
+//     }
+// }
 
 // any
 //     createUser

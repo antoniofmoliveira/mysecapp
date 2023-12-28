@@ -1,4 +1,4 @@
-import NextAuth from "next-auth"
+import NextAuth from "next-auth";
 
 // import Apple from "next-auth/providers/apple"
 // import Atlassian from "next-auth/providers/atlassian"
@@ -22,9 +22,9 @@ import NextAuth from "next-auth"
 // import Foursquare from "next-auth/providers/foursquare"
 // import Freshbooks from "next-auth/providers/freshbooks"
 // import Fusionauth from "next-auth/providers/fusionauth"
-import GitHub from "next-auth/providers/github"
+import GitHub from "next-auth/providers/github";
 // import Gitlab from "next-auth/providers/gitlab"
-import Google from "next-auth/providers/google"
+import Google from "next-auth/providers/google";
 // import Hubspot from "next-auth/providers/hubspot"
 // import Instagram from "next-auth/providers/instagram"
 // import Kakao from "next-auth/providers/kakao"
@@ -63,7 +63,7 @@ import Google from "next-auth/providers/google"
 // import Zoho from "next-auth/providers/zoho"
 // import Zoom from "next-auth/providers/zoom"
 
-import type { NextAuthConfig } from "next-auth"
+import type { NextAuthConfig } from "next-auth";
 
 export const config = {
   theme: {
@@ -134,12 +134,16 @@ export const config = {
     // Zoom,
   ],
   callbacks: {
-    authorized({ request, auth }) {
-      const { pathname } = request.nextUrl
-      if (pathname.startsWith("/myapp")) return !!auth
-      return true
-    },
+    // authorized({ request, auth }) {
+    //   const { pathname } = request.nextUrl;
+    //   if (pathname.startsWith("/myappp")) {
+    //     const email = auth?.user?.email
+    //     console.log("EMAIL "+ email)
+    //     return !!auth;
+    //   }
+    //   return true;
+    // },
   },
-} satisfies NextAuthConfig
+} satisfies NextAuthConfig;
 
-export const { handlers, auth, signIn, signOut } = NextAuth(config)
+export const { handlers, auth, signIn, signOut } = NextAuth(config);
