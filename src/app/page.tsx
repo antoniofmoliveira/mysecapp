@@ -28,7 +28,7 @@ export default async function Home() {
   }
   return (
     <main>
-      <a href={`/myapp/${user.userid}/todo`}>Todo {user.userid}</a>
+      <a href={`/myapp/${user.userid}/todo`}>Todo</a>
 
       <SignOut />
     </main>

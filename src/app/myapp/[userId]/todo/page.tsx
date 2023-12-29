@@ -6,7 +6,7 @@ import { Todo } from "@/_lib/definitions";
 import { auth } from "@/auth";
 import { SignIn, SignOut } from "@/components/auth-components";
 
-export default async function Todo({ params }: { params: { userId: string } }) {
+export default async function TodoList({ params }: { params: { userId: string } }) {
   const session = await auth();
   if (!session?.user) return <SignIn />;
 
@@ -23,12 +23,12 @@ export default async function Todo({ params }: { params: { userId: string } }) {
       </form>
 
       {todos &&
-        todos.map((todo: Todo) => (
-          <li key={todo.todoid}>
-            <span>{todo.title}</span>
+        todos.map((todo_: Todo) => (
+          <li key={todo_.todoid}>
+            <span>{todo_.title}</span>
             <form action={removeTodo}>
-              <input type="hidden" name="todoid" value={todo.todoid} />
-              <input type="hidden" name="userid" value={todo.userid} />
+              <input type="hidden" name="todoid" value={todo_.todoid} />
+              <input type="hidden" name="userid" value={todo_.userid} />
               <input type="submit" value="Apagar" />
             </form>
           </li>

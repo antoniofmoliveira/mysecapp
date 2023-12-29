@@ -1,4 +1,4 @@
-"use server";
+// "use server";
 
 import db, { sql } from "./db";
 import { Photo, Todo, User } from "./definitions";

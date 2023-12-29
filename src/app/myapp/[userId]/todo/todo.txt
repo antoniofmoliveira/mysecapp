@@ -1,5 +1,5 @@
-userId : uuid
-todoId : uuid
+userid : uuid
+todoid : uuid
 title : text
 completed : boolean
 dueDate : date
@@ -13,10 +13,10 @@ owner
     listTodo
 
 CREATE TABLE IF NOT EXISTS todo (
-    todoId UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
-    userId UUID NOT NULL,
+    todoid UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
+    userid UUID NOT NULL,
     title TEXT NOT NULL,
     completed BOOLEAN DEFAULT FALSE,
     dueDate DATE DEFAULT NULL,
-    CONSTRAINT fk_user FOREIGN KEY(userId) REFERENCES users(userId)
+    CONSTRAINT fk_user FOREIGN KEY(userid) REFERENCES users(userid)
 )
